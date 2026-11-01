@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solid Take Games | Official Developer Portal</title>
+    <meta name="description" content="Solid Take Games - Creators of TextureSnap: 3D Scanner &amp; PBR Studio, tactical watchfaces, and interactive mobile apps.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0c10;
+            --bg-card: #131720;
+            --border-card: #222938;
+            --accent-cyan: #00e5ff;
+            --accent-green: #00ff88;
+            --accent-blue: #0070f3;
+            --text-main: #f0f3f6;
+            --text-muted: #8b949e;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+        header {
+            padding: 32px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-group { display: flex; align-items: center; gap: 14px; }
+        .logo-badge {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #00e5ff 0%, #0070f3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            box-shadow: 0 4px 16px rgba(0, 229, 255, 0.3);
+        }
+        .logo-title { font-weight: 800; font-size: 20px; letter-spacing: -0.5px; }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--accent-cyan); }
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 30px;
+            background: rgba(0, 229, 255, 0.1);
+            border: 1px solid rgba(0, 229, 255, 0.25);
+            color: var(--accent-cyan);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            margin-bottom: 18px;
+            background: linear-gradient(180deg, #ffffff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            max-width: 640px;
+            margin: 0 auto 36px;
+            color: var(--text-muted);
+            font-size: 18px;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 15px;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-primary {
+            background: linear-gradient(135deg, #00e5ff 0%, #0070f3 100%);
+            color: #000;
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(0, 229, 255, 0.35);
+        }
+        .btn-secondary {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            color: var(--text-main);
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            padding: 40px 0 80px;
+        }
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 16px;
+            padding: 28px;
+            transition: border-color 0.2s;
+        }
+        .feature-card:hover { border-color: rgba(0, 229, 255, 0.4); }
+        .feature-icon { font-size: 32px; margin-bottom: 16px; }
+        .feature-card h3 { font-size: 19px; margin-bottom: 10px; font-weight: 700; }
+        .feature-card p { color: var(--text-muted); font-size: 14px; line-height: 1.6; }
+        footer {
+            margin-top: auto;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            color: var(--text-muted);
+            font-size: 14px;
+            text-align: center;
+        }
+        footer a { color: var(--text-muted); text-decoration: none; }
+        footer a:hover { color: var(--accent-cyan); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo-group">
+                <div class="logo-badge">⚡</div>
+                <div class="logo-title">Solid Take Games</div>
+            </div>
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="/privacy-policy.html">Privacy Policy</a>
+                <a href="mailto:solidtakegames@gmail.com">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="pill">✨ Latest Release v1.0.6 Live on Google Play</div>
+            <h1>TextureSnap: 3D Scanner &amp; PBR Studio</h1>
+            <p>Transform any physical surface or object into game-ready 3D models and physically-based rendering (PBR) texture maps entirely on your mobile device.</p>
+            <div class="btn-group">
+                <a href="https://play.google.com/store/apps/details?id=com.solidtakegames.texturesnap" class="btn btn-primary" target="_blank" rel="noopener">Get it on Google Play</a>
+                <a href="/privacy-policy.html" class="btn btn-secondary">Privacy Policy</a>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📸</div>
+                <h3>AR Photogrammetry 3D Scanning</h3>
+                <p>On-device point-cloud capture and Delaunay surface reconstruction with real-time AR orbit guidance and 16 KB memory page size support.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Full PBR Map Generation</h3>
+                <p>Instantly extract Tangent Normal, Roughness, Specular, and Ambient Occlusion cavity shading from single captures or photos.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🧊</div>
+                <h3>OpenGL ES 3D Profiler</h3>
+                <p>Inspect meshes in real-time with Lit, Wireframe, Normal Map, and Point Cloud shaders, complete with 5-cube material exhibition previews.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🧩</div>
+                <h3>Texture Atlas Builder</h3>
+                <p>Seamlessly pack multi-texture sets into power-of-two (PoT) UV sprite sheets (up to 4096x4096) optimized for Unity, Unreal Engine, and Godot.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Solid Take Games. All rights reserved. &bull; <a href="/privacy-policy.html">Privacy Policy</a> &bull; <a href="/app-ads.txt">app-ads.txt</a> &bull; Support: <a href="mailto:solidtakegames@gmail.com">solidtakegames@gmail.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>
