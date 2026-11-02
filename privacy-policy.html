@@ -4,51 +4,280 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | Solid Take Games</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.7; color: #333; max-width: 800px; margin: 40px auto; padding: 0 20px; }
-        h1, h2, h3 { color: #111; margin-top: 30px; }
-        h1 { border-bottom: 2px solid #eaeaea; padding-bottom: 12px; }
-        a { color: #0070f3; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .meta { color: #666; font-size: 14px; margin-bottom: 30px; }
-        .box { background: #f7f9fa; border-left: 4px solid #0070f3; padding: 16px 20px; margin: 24px 0; border-radius: 4px; }
+        :root {
+            --bg-color: #0b0f19;
+            --surface-color: #131b2e;
+            --border-color: #232f48;
+            --accent-cyan: #00d2ff;
+            --accent-blue: #0070f3;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --tag-bg: #1e293b;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 48px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--accent-cyan);
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            border-radius: 9999px;
+            padding: 6px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        .meta-line {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .meta-line span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .app-nav {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+        }
+        .nav-btn {
+            background: var(--tag-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .nav-btn:hover, .nav-btn.active {
+            background: var(--accent-blue);
+            border-color: var(--accent-cyan);
+            color: #ffffff;
+        }
+        .app-card {
+            background: rgba(11, 15, 25, 0.7);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 40px;
+        }
+        .app-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .app-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent-cyan);
+        }
+        .app-badge {
+            background: #1e293b;
+            color: #38bdf8;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-top: 28px;
+            margin-bottom: 14px;
+        }
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p, li {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 14px;
+        }
+        ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight-box {
+            background: rgba(0, 112, 243, 0.08);
+            border-left: 4px solid var(--accent-cyan);
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+            color: #e2e8f0;
+            font-size: 14px;
+        }
+        a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
-    <h1>Privacy Policy</h1>
-    <div class="meta">Last Updated: October 31, 2026 &bull; Solid Take Games</div>
+    <div class="container">
+        <div class="header-badge">Official Privacy Documentation</div>
+        <h1>Privacy Policy</h1>
+        <div class="meta-line">
+            <span><strong>Developer:</strong> Solid Take Games</span>
+            <span><strong>Last Updated:</strong> November 2, 2026</span>
+            <span><strong>Contact:</strong> solidtakegames@gmail.com</span>
+        </div>
 
-    <div class="box">
-        <strong>Summary:</strong> Solid Take Games develops privacy-respecting applications. TextureSnap performs all 3D reconstruction and texture synthesis entirely on your device. We do not transmit your photos, scans, or private media to any external servers.
+        <div class="highlight-box">
+            <strong>Privacy-First Commitment:</strong> Solid Take Games develops offline-first, privacy-respecting mobile experiences. Our applications perform core 3D computations, sensor capture, and progression saving strictly on your physical device. We never transmit your personal scans, photos, or private files to any cloud or external servers.
+        </div>
+
+        <div class="app-nav">
+            <a href="#texturesnap" class="nav-btn active">TextureSnap: 3D Scanner &amp; PBR</a>
+            <a href="#orbitalslice" class="nav-btn">Orbital Slice: Space Roguelite</a>
+            <a href="#general" class="nav-btn">General Publisher Terms</a>
+        </div>
+
+        <!-- TEXTURESNAP SECTION -->
+        <div class="app-card" id="texturesnap">
+            <div class="app-card-header">
+                <div class="app-title">TextureSnap: 3D Scanner &amp; PBR</div>
+                <div class="app-badge">com.solidtakegames.texturesnap</div>
+            </div>
+
+            <h2>1. Information Handling &amp; On-Device Processing</h2>
+            <p><strong>TextureSnap: 3D Scanner &amp; PBR</strong> is architected with strict on-device data sovereignty. We do not require account registration, cloud sign-ins, or profile creation.</p>
+
+            <h3>A. Camera Access &amp; Photogrammetry Capture</h3>
+            <p>TextureSnap requires camera access strictly for:</p>
+            <ul>
+                <li>Live camera viewfinder for texture framing and real-time surface scanning.</li>
+                <li>AR feature tracking and multi-angle photogrammetry capture.</li>
+                <li>Generating normal maps, displacement heights, roughness estimators, and 3D mesh geometry.</li>
+            </ul>
+            <p><strong>Zero Cloud Transmission:</strong> All 3D meshing (Poisson surface reconstruction, TSDF voxelization, Delaunay triangulation) and texture map computations occur entirely on your device hardware (CPU/GPU/Vulkan). Your camera stream, captured photos, and synthesized 3D models are stored in private app storage or public folders explicitly chosen by you. We never collect, upload, or transmit your raw images or 3D files.</p>
+
+            <h3>B. Photo Library Access</h3>
+            <p>The app integrates the official Android System Photo Picker. Only image files explicitly selected by you in the system dialog are loaded into the app for texture conversion.</p>
+
+            <h2>2. Advertising &amp; In-App Purchases</h2>
+            <ul>
+                <li><strong>Google AdMob:</strong> To provide free daily scans, TextureSnap integrates Google AdMob rewarded ads. AdMob may collect coarse device identifiers (AAID), OS version, and diagnostic telemetry in compliance with Google Advertising policies.</li>
+                <li><strong>Google Play Billing:</strong> In-app purchases for Pro licenses and material packs are processed securely by Google Play Billing. Solid Take Games never sees or stores your payment card credentials.</li>
+            </ul>
+
+            <h2>3. Data Retention &amp; Deletion</h2>
+            <p>Because all scanned textures and exported OBJ/PNG files reside locally on your device, you have complete control over data deletion. Removing the app or clearing its data permanently deletes all local scans.</p>
+        </div>
+
+        <!-- ORBITAL SLICE SECTION -->
+        <div class="app-card" id="orbitalslice">
+            <div class="app-card-header">
+                <div class="app-title">Orbital Slice: Space Roguelite</div>
+                <div class="app-badge">com.solidxgames.orbitalslice</div>
+            </div>
+
+            <h2>1. Information Handling &amp; Gameplay Data</h2>
+            <p><strong>Orbital Slice: Space Roguelite</strong> is an arcade action experience that requires no user accounts, registration, or logins. We collect no personal identifiable information (PII).</p>
+
+            <h3>A. Local Offline Progression</h3>
+            <p>All core gameplay progression data—including unlocked ship hulls, high scores, Talent Lab upgrades, and resonance core balances—is stored strictly offline on your device using standard local app storage.</p>
+
+            <h3>B. Advertising Telemetry</h3>
+            <p>The game integrates the <strong>Google Mobile Ads SDK (Google AdMob)</strong> to provide free-to-play gameplay and optional rewarded revival mechanics. AdMob may process device-specific information including Google Advertising ID (AAID), device model, coarse IP address, and ad performance telemetry under Google's standard privacy policies.</p>
+        </div>
+
+        <!-- GENERAL TERMS -->
+        <div class="app-card" id="general">
+            <div class="app-card-header">
+                <div class="app-title">General Publisher Information</div>
+                <div class="app-badge">Solid Take Games</div>
+            </div>
+
+            <h2>Third-Party Services</h2>
+            <p>Our applications integrate trusted third-party services that operate under their respective privacy policies:</p>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play Services Privacy Policy</a></li>
+                <li><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google AdMob Policy &amp; Privacy Overview</a></li>
+                <li><a href="https://play.google.com/about/monetization-ads/" target="_blank" rel="noopener">Google Play Billing &amp; Monetization Terms</a></li>
+            </ul>
+
+            <h2>Children's Privacy (COPPA &amp; Google Families)</h2>
+            <p>Our applications comply with COPPA and Google Play Families guidelines. We do not knowingly collect personal information from children under the age of 13. Ad requests are flagged according to applicable child-directed regulations where required.</p>
+
+            <h2>Your Rights &amp; Ad Opt-Out Options</h2>
+            <p>You can reset or opt out of personalized advertisements at any time through your Android device settings:</p>
+            <p><code>Settings &gt; Google &gt; Ads &gt; Delete advertising ID</code> or <code>Reset advertising ID</code>.</p>
+
+            <h2>Contact Information</h2>
+            <p>If you have questions, feedback, or data privacy requests regarding any Solid Take Games application, please contact:</p>
+            <p>
+                <strong>Developer:</strong> Solid Take Games<br>
+                <strong>Email:</strong> <a href="mailto:solidtakegames@gmail.com">solidtakegames@gmail.com</a><br>
+                <strong>Official Web Portal:</strong> <a href="https://kl3tus.github.io">https://kl3tus.github.io</a>
+            </p>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 Solid Take Games. All rights reserved. &bull; <a href="https://kl3tus.github.io">Developer Portal</a> &bull; <a href="https://kl3tus.github.io/app-ads.txt">app-ads.txt</a>
+        </div>
     </div>
-
-    <h2>1. Introduction</h2>
-    <p>This Privacy Policy explains how Solid Take Games ("we", "us", or "our") handles information in connection with our mobile applications and services, including <strong>TextureSnap: 3D Scanner &amp; PBR</strong>.</p>
-
-    <h2>2. Information Collection and Processing</h2>
-    <h3>A. Camera and Device Storage</h3>
-    <p>TextureSnap requires camera access solely to enable real-time surface scanning, AR photogrammetry capture, and texture map computation. All processing (depth estimation, normal map extraction, meshing, and texture atlas generation) is performed locally on your device's hardware. Your camera stream, captured frames, and generated 3D models are stored in your device's private storage or standard public directories chosen by you. We never collect, upload, or transmit your raw camera images or 3D model files.</p>
-
-    <h3>B. Photo Library Access</h3>
-    <p>TextureSnap uses the official Android System Photo Picker to let you import existing textures or reference photos. Only the specific image files you select in the system picker are accessible to the app.</p>
-
-    <h2>3. Third-Party Services</h2>
-    <p>Our applications may use third-party services that collect information used to identify you or display advertisements:</p>
-    <ul>
-        <li><strong>Google Play Services:</strong> Required for application distribution, licensing, and crash reporting.</li>
-        <li><strong>Google Play Billing:</strong> Handles in-app purchases securely through your Google account. We do not receive or store payment card details.</li>
-        <li><strong>Google AdMob:</strong> Serves rewarded advertisements to provide bonus scan allocations. AdMob may collect device identifiers and usage metrics in compliance with Google's Advertising Policies and Privacy Terms.</li>
-    </ul>
-
-    <h2>4. Data Retention and Security</h2>
-    <p>Because user scan data and textures remain strictly on your local device, you maintain full control over your files. Deleting a scan or uninstalling the app deletes local app data.</p>
-
-    <h2>5. Children's Privacy</h2>
-    <p>Our applications do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children.</p>
-
-    <h2>6. Contact Us</h2>
-    <p>If you have any questions or suggestions regarding this Privacy Policy, please contact us at:</p>
-    <p><strong>Email:</strong> <a href="mailto:solidtakegames@gmail.com">solidtakegames@gmail.com</a><br>
-    <strong>Website:</strong> <a href="https://kl3tus.github.io">https://kl3tus.github.io</a></p>
 </body>
 </html>
